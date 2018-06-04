@@ -1,0 +1,12 @@
+image: mhart/alpine-node
+stages:
+  - lint
+  - test
+before_script:
+  - npm install
+lint:
+  stage: lint
+  script: npm run lint
+unit_test:
+  stage: test
+  script: npm test

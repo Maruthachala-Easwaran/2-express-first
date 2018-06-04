@@ -1,0 +1,28 @@
+{
+  "name": "ngexpress",
+  "version": "1.0.0",
+  "description": "express first app",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha app.spec.js",
+    "lint": "eslint --fix ."
+  },
+  "author": "Maruthachala Moorthy",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/eslint": "^4.16.2",
+    "@types/mocha": "^5.2.1",
+    "@types/should": "^13.0.0",
+    "@types/supertest": "^2.0.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "mocha": "^5.2.0",
+    "should": "^13.2.1",
+    "supertest": "^3.1.0"
+  },
+  "dependencies": {
+    "@types/express": "^4.11.1",
+    "express": "^4.16.3"
+  }
+}
