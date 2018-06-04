@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 app.get('/ping', (req, res) => {
-  res.send('pong');
+  res.send('pongipong');
 });
 
 app.get('/', (req, res) => {
