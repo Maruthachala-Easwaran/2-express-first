@@ -9,7 +9,7 @@ describe('ExpressApp', () => {
       .expect(200)
       .end((err, res) => {
         // console.log(res);
-        res.text.should.be.exactly('pong');
+        res.text.should.be.exactly('pongipong');
         done(err);
       });
   });
