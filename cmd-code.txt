@@ -1,0 +1,407 @@
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git init
+Initialized empty Git repository in /home/ubuntu/Desktop/ngexpress/.git/
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (ngexpress) 
+version: (1.0.0) 
+description: express first app
+entry point: (index.js) app.js
+test command: 
+git repository: 
+keywords: 
+author: Maruthachala Moorthy
+license: (ISC) 
+About to write to /home/ubuntu/Desktop/ngexpress/package.json:
+
+{
+  "name": "ngexpress",
+  "version": "1.0.0",
+  "description": "express first app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maruthachala Moorthy",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) 
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ eslint --init
+? How would you like to configure ESLint? Use a popular style guide
+? Which style guide do you want to follow? Airbnb
+? Do you use React? No
+? What format do you want your config file to be in? YAML
+Checking peerDependencies of eslint-config-airbnb-base@latest
+Installing eslint-config-airbnb-base@latest, eslint-plugin-import@^2.7.0
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN eslint-plugin-import@2.12.0 requires a peer of eslint@2.x - 4.x but none is installed. You must install peer dependencies yourself.
+npm WARN eslint-config-airbnb-base@12.1.0 requires a peer of eslint@^4.9.0 but none is installed. You must install peer dependencies yourself.
+npm WARN ngexpress@1.0.0 No repository field.
+
++ eslint-plugin-import@2.12.0
++ eslint-config-airbnb-base@12.1.0
+added 51 packages from 34 contributors and audited 64 packages in 3.037s
+found 0 vulnerabilities
+
+Successfully created .eslintrc.yml file in /home/ubuntu/Desktop/ngexpress
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ node 'bin/www.js'
+module.js:540
+    throw err;
+    ^
+
+Error: Cannot find module 'express'
+    at Function.Module._resolveFilename (module.js:538:15)
+    at Function.Module._load (module.js:468:25)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/app.js:1:79)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm install express --save
+npm WARN eslint-config-airbnb-base@12.1.0 requires a peer of eslint@^4.9.0 but none is installed. You must install peer dependencies yourself.
+npm WARN eslint-plugin-import@2.12.0 requires a peer of eslint@2.x - 4.x but none is installed. You must install peer dependencies yourself.
+npm WARN ngexpress@1.0.0 No repository field.
+
++ express@4.16.3
+added 48 packages from 45 contributors and audited 183 packages in 2.584s
+found 0 vulnerabilities
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ node 'bin/www.js'
+Server started at 8081
+^C
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ node 'bin/www.js'
+Server started at 8081
+^C
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ mocha app.spec.js
+module.js:540
+    throw err;
+    ^
+
+Error: Cannot find module 'should'
+    at Function.Module._resolveFilename (module.js:538:15)
+    at Function.Module._load (module.js:468:25)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/app.spec.js:1:63)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at /usr/lib/node_modules/mocha/lib/mocha.js:250:27
+    at Array.forEach (<anonymous>)
+    at Mocha.loadFiles (/usr/lib/node_modules/mocha/lib/mocha.js:247:14)
+    at Mocha.run (/usr/lib/node_modules/mocha/lib/mocha.js:576:10)
+    at Object.<anonymous> (/usr/lib/node_modules/mocha/bin/_mocha:637:18)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Function.Module.runMain (module.js:684:10)
+    at startup (bootstrap_node.js:187:16)
+    at bootstrap_node.js:608:3
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm install should supertest mocha --save-dev
+npm WARN eslint-config-airbnb-base@12.1.0 requires a peer of eslint@^4.9.0 but none is installed. You must install peer dependencies yourself.
+npm WARN eslint-plugin-import@2.12.0 requires a peer of eslint@2.x - 4.x but none is installed. You must install peer dependencies yourself.
+npm WARN ngexpress@1.0.0 No repository field.
+
++ should@13.2.1
++ mocha@5.2.0
++ supertest@3.1.0
+added 40 packages from 445 contributors and audited 267 packages in 3.446s
+found 0 vulnerabilities
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ mocha app.spec.js
+
+
+  App
+    ✓ should return Pong when requested with ping
+
+
+  1 passing (33ms)
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ mocha app.spec.js
+
+
+  ExpressApp
+    ✓ should return Pong when requested with ping
+
+
+  1 passing (33ms)
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ node run eslint .
+module.js:540
+    throw err;
+    ^
+
+Error: Cannot find module '/home/ubuntu/Desktop/ngexpress/run'
+    at Function.Module._resolveFilename (module.js:538:15)
+    at Function.Module._load (module.js:468:25)
+    at Function.Module.runMain (module.js:684:10)
+    at startup (bootstrap_node.js:187:16)
+    at bootstrap_node.js:608:3
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ eslint .
+Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngexpress/.eslintrc.yml
+Error: Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngexpress/.eslintrc.yml
+    at ModuleResolver.resolve (/usr/lib/node_modules/eslint/lib/util/module-resolver.js:74:19)
+    at resolve (/usr/lib/node_modules/eslint/lib/config/config-file.js:479:28)
+    at load (/usr/lib/node_modules/eslint/lib/config/config-file.js:551:26)
+    at configExtends.reduceRight (/usr/lib/node_modules/eslint/lib/config/config-file.js:425:36)
+    at Array.reduceRight (<anonymous>)
+    at applyExtends (/usr/lib/node_modules/eslint/lib/config/config-file.js:403:26)
+    at loadFromDisk (/usr/lib/node_modules/eslint/lib/config/config-file.js:523:22)
+    at Object.load (/usr/lib/node_modules/eslint/lib/config/config-file.js:559:20)
+    at Config.getLocalConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:227:44)
+    at Config.getConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:179:43)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm install eslint --save-dev
+npm WARN ngexpress@1.0.0 No repository field.
+
++ eslint@4.19.1
+added 108 packages from 130 contributors and audited 517 packages in 7.06s
+found 0 vulnerabilities
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm install mocha --save-dev
+npm WARN ngexpress@1.0.0 No repository field.
+
++ mocha@5.2.0
+updated 1 package and audited 520 packages in 2.406s
+found 0 vulnerabilities
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ eslint .
+Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngexpress/.eslintrc.yml
+Error: Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngexpress/.eslintrc.yml
+    at ModuleResolver.resolve (/usr/lib/node_modules/eslint/lib/util/module-resolver.js:74:19)
+    at resolve (/usr/lib/node_modules/eslint/lib/config/config-file.js:479:28)
+    at load (/usr/lib/node_modules/eslint/lib/config/config-file.js:551:26)
+    at configExtends.reduceRight (/usr/lib/node_modules/eslint/lib/config/config-file.js:425:36)
+    at Array.reduceRight (<anonymous>)
+    at applyExtends (/usr/lib/node_modules/eslint/lib/config/config-file.js:403:26)
+    at loadFromDisk (/usr/lib/node_modules/eslint/lib/config/config-file.js:523:22)
+    at Object.load (/usr/lib/node_modules/eslint/lib/config/config-file.js:559:20)
+    at Config.getLocalConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:227:44)
+    at Config.getConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:179:43)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ eslint .
+Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngexpress/.eslintrc.yml
+Error: Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngexpress/.eslintrc.yml
+    at ModuleResolver.resolve (/usr/lib/node_modules/eslint/lib/util/module-resolver.js:74:19)
+    at resolve (/usr/lib/node_modules/eslint/lib/config/config-file.js:479:28)
+    at load (/usr/lib/node_modules/eslint/lib/config/config-file.js:551:26)
+    at configExtends.reduceRight (/usr/lib/node_modules/eslint/lib/config/config-file.js:425:36)
+    at Array.reduceRight (<anonymous>)
+    at applyExtends (/usr/lib/node_modules/eslint/lib/config/config-file.js:403:26)
+    at loadFromDisk (/usr/lib/node_modules/eslint/lib/config/config-file.js:523:22)
+    at Object.load (/usr/lib/node_modules/eslint/lib/config/config-file.js:559:20)
+    at Config.getLocalConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:227:44)
+    at Config.getConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:179:43)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm test
+
+> ngexpress@1.0.0 test /home/ubuntu/Desktop/ngexpress
+> mocha app.spec.js
+
+
+
+  ExpressApp
+    ✓ should return Pong when requested with ping
+
+
+  1 passing (33ms)
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm run lint
+
+> ngexpress@1.0.0 lint /home/ubuntu/Desktop/ngexpress
+> eslint .
+
+
+/home/ubuntu/Desktop/ngexpress/app.js
+   5:16  error  A space is required after ','                  comma-spacing
+   5:21  error  A space is required after ','                  comma-spacing
+   5:25  error  Missing space before =>                        arrow-spacing
+   5:28  error  Block must not be padded by blank lines        padded-blocks
+   5:28  error  Missing space after =>                         arrow-spacing
+   7:1   error  Expected indentation of 2 spaces but found 4   indent
+   9:1   error  Block must not be padded by blank lines        padded-blocks
+  11:12  error  A space is required after ','                  comma-spacing
+  11:17  error  A space is required after ','                  comma-spacing
+  11:21  error  Missing space before =>                        arrow-spacing
+  11:24  error  Missing space after =>                         arrow-spacing
+  11:24  error  Block must not be padded by blank lines        padded-blocks
+  13:1   error  Expected indentation of 2 spaces but found 4   indent
+  15:1   error  Block must not be padded by blank lines        padded-blocks
+  17:22  error  Newline required at end of file but not found  eol-last
+
+/home/ubuntu/Desktop/ngexpress/app.spec.js
+  16:4  error  Newline required at end of file but not found  eol-last
+
+/home/ubuntu/Desktop/ngexpress/bin/www.js
+  3:22  error    Missing space before =>                        arrow-spacing
+  3:25  error    Missing space after =>                         arrow-spacing
+  4:1   warning  Unexpected console statement                   no-console
+  4:1   error    Expected indentation of 2 spaces but found 0   indent
+  6:1   error    Block must not be padded by blank lines        padded-blocks
+  6:4   error    Newline required at end of file but not found  eol-last
+
+✖ 22 problems (21 errors, 1 warning)
+  21 errors, 0 warnings potentially fixable with the `--fix` option.
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! ngexpress@1.0.0 lint: `eslint .`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the ngexpress@1.0.0 lint script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-06-04T16_22_40_429Z-debug.log
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm run eslint .
+npm ERR! missing script: eslint
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-06-04T16_23_05_096Z-debug.log
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm run eslint .
+npm ERR! missing script: eslint
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-06-04T16_24_10_921Z-debug.log
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm run lint
+
+> ngexpress@1.0.0 lint /home/ubuntu/Desktop/ngexpress
+> eslint --fix .
+
+
+/home/ubuntu/Desktop/ngexpress/bin/www.js
+  4:3  warning  Unexpected console statement  no-console
+
+✖ 1 problem (0 errors, 1 warning)
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm run lint
+
+> ngexpress@1.0.0 lint /home/ubuntu/Desktop/ngexpress
+> eslint --fix .
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git remote -v
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.editorconfig
+	.eslintrc.yml
+	.gitignore
+	.gitlab-ci.yml
+	app.js
+	app.spec.js
+	bin/
+	node_modules/
+	package-lock.json
+	package.json
+
+nothing added to commit but untracked files present (use "git add" to track)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.editorconfig
+	.eslintrc.yml
+	.gitignore
+	.gitlab-ci.yml
+	app.js
+	app.spec.js
+	bin/
+	package-lock.json
+	package.json
+
+nothing added to commit but untracked files present (use "git add" to track)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git add .
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git remote -v
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git commit -am "updated code using express"
+[master (root-commit) 0ed9c55] updated code using express
+ Committer: Ubuntu <ubuntu@ip-172-31-23-149.ec2.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 9 files changed, 2229 insertions(+)
+ create mode 100644 .editorconfig
+ create mode 100644 .eslintrc.yml
+ create mode 100644 .gitignore
+ create mode 100644 .gitlab-ci.yml
+ create mode 100644 app.js
+ create mode 100644 app.spec.js
+ create mode 100644 bin/www.js
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git remote add origin git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git remote -v
+origin	git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git (fetch)
+origin	git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git (push)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git remote add origin2 git@github.com:Maruthachala-Easwaran/2-express-first.git
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git remote -v
+origin	git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git (fetch)
+origin	git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git (push)
+origin2	git@github.com:Maruthachala-Easwaran/2-express-first.git (fetch)
+origin2	git@github.com:Maruthachala-Easwaran/2-express-first.git (push)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin master
+To git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git remote add origin3 git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/express-app.git
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin3 master
+Counting objects: 12, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (12/12), 20.61 KiB | 0 bytes/s, done.
+Total 12 (delta 0), reused 0 (delta 0)
+To git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/express-app.git
+ * [new branch]      master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin2 master
+Counting objects: 12, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (12/12), 20.61 KiB | 0 bytes/s, done.
+Total 12 (delta 0), reused 0 (delta 0)
+To git@github.com:Maruthachala-Easwaran/2-express-first.git
+ * [new branch]      master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ 
