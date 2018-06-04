@@ -405,3 +405,443 @@ Total 12 (delta 0), reused 0 (delta 0)
 To git@github.com:Maruthachala-Easwaran/2-express-first.git
  * [new branch]      master -> master
 ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ 
+
+
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git remote -v
+origin	git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git (fetch)
+origin	git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git (push)
+origin2	git@github.com:Maruthachala-Easwaran/2-express-first.git (fetch)
+origin2	git@github.com:Maruthachala-Easwaran/2-express-first.git (push)
+origin3	git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/express-app.git (fetch)
+origin3	git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/express-app.git (push)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ clear
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   app.js
+	modified:   package-lock.json
+	modified:   package.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git add .
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git commit -am "nodemon integrated"[master 7a12f18] nodemon integrated
+ Committer: Ubuntu <ubuntu@ip-172-31-23-149.ec2.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 2122 insertions(+), 132 deletions(-)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin2 master
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 15.48 KiB | 0 bytes/s, done.
+Total 5 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To git@github.com:Maruthachala-Easwaran/2-express-first.git
+   98daaec..7a12f18  master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin3 master
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 15.48 KiB | 0 bytes/s, done.
+Total 5 (delta 4), reused 0 (delta 0)
+To git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/express-app.git
+   98daaec..7a12f18  master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git add .
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git commit -am "test case corrected"
+[master 15f8f11] test case corrected
+ Committer: Ubuntu <ubuntu@ip-172-31-23-149.ec2.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin2 master
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 302 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To git@github.com:Maruthachala-Easwaran/2-express-first.git
+   7a12f18..15f8f11  master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin3 master
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 302 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/express-app.git
+   7a12f18..15f8f11  master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ which mongo
+/usr/bin/mongo
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ mongo
+MongoDB shell version v3.6.5
+connecting to: mongodb://127.0.0.1:27017
+2018-06-05T00:57:47.227+0530 W NETWORK  [thread1] Failed to connect to 127.0.0.1:27017, in(checking socket for error after poll), reason: Connection refused
+2018-06-05T00:57:47.235+0530 E QUERY    [thread1] Error: couldn't connect to server 127.0.0.1:27017, connection attempt failed :
+connect@src/mongo/shell/mongo.js:251:13
+@(connect):1:6
+exception: connect failed
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ sudo service mongod start
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ mongod
+2018-06-05T01:02:14.615+0530 I CONTROL  [initandlisten] MongoDB starting : pid=6625 port=27017 dbpath=/data/db 64-bit host=ip-172-31-23-149
+2018-06-05T01:02:14.615+0530 I CONTROL  [initandlisten] db version v3.6.5
+2018-06-05T01:02:14.615+0530 I CONTROL  [initandlisten] git version: a20ecd3e3a174162052ff99913bc2ca9a839d618
+2018-06-05T01:02:14.615+0530 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2018-06-05T01:02:14.615+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-06-05T01:02:14.615+0530 I CONTROL  [initandlisten] modules: none
+2018-06-05T01:02:14.615+0530 I CONTROL  [initandlisten] build environment:
+2018-06-05T01:02:14.615+0530 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2018-06-05T01:02:14.615+0530 I CONTROL  [initandlisten]     distarch: x86_64
+2018-06-05T01:02:14.616+0530 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-06-05T01:02:14.616+0530 I CONTROL  [initandlisten] options: {}
+2018-06-05T01:02:14.632+0530 I STORAGE  [initandlisten] exception in initAndListen: IllegalOperation: Attempted to create a lock file on a read-only directory: /data/db, terminating
+2018-06-05T01:02:14.632+0530 I CONTROL  [initandlisten] now exiting
+2018-06-05T01:02:14.632+0530 I CONTROL  [initandlisten] shutting down with code:100
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ which mongo
+/usr/bin/mongo
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm start
+
+> ngexpress@1.0.0 start /home/ubuntu/Desktop/ngexpress
+> nodemon ./bin/www.js
+
+[nodemon] 1.17.5
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node ./bin/www.js`
+module.js:540
+    throw err;
+    ^
+
+Error: Cannot find module 'mongoose'
+    at Function.Module._resolveFilename (module.js:538:15)
+    at Function.Module._load (module.js:468:25)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/app.js:2:18)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+[nodemon] app crashed - waiting for file changes before starting...
+^C
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm install mongoose --save
+npm WARN ngexpress@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ mongoose@5.1.4
+added 16 packages from 12 contributors and audited 1905 packages in 5.081s
+found 0 vulnerabilities
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm start
+
+> ngexpress@1.0.0 start /home/ubuntu/Desktop/ngexpress
+> nodemon ./bin/www.js
+
+[nodemon] 1.17.5
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node ./bin/www.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./bin/www.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./bin/www.js`
+module.js:540
+    throw err;
+    ^
+
+Error: Cannot find module './movie.model'
+    at Function.Module._resolveFilename (module.js:538:15)
+    at Function.Module._load (module.js:468:25)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/api/movies/movies.router.js:2:20)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/app.js:3:20)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./bin/www.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./bin/www.js`
+/home/ubuntu/Desktop/ngexpress/api/movies/movie.model.js:6
+        type: string,
+              ^
+
+ReferenceError: string is not defined
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/api/movies/movie.model.js:6:15)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/api/movies/movies.router.js:2:20)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./bin/www.js`
+/home/ubuntu/Desktop/ngexpress/api/movies/movie.model.js:6
+        type: string,
+              ^
+
+ReferenceError: string is not defined
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/api/movies/movie.model.js:6:15)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/api/movies/movies.router.js:2:20)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./bin/www.js`
+/home/ubuntu/Desktop/ngexpress/api/movies/movie.model.js:6
+        type: string,
+              ^
+
+ReferenceError: string is not defined
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/api/movies/movie.model.js:6:15)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/api/movies/movies.router.js:2:20)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+[nodemon] app crashed - waiting for file changes before starting...
+^C
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm start
+
+> ngexpress@1.0.0 start /home/ubuntu/Desktop/ngexpress
+> nodemon ./bin/www.js
+
+[nodemon] 1.17.5
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node ./bin/www.js`
+/home/ubuntu/Desktop/ngexpress/api/movies/movie.model.js:6
+        type: string,
+              ^
+
+ReferenceError: string is not defined
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/api/movies/movie.model.js:6:15)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/home/ubuntu/Desktop/ngexpress/api/movies/movies.router.js:2:20)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./bin/www.js`
+^C
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm start
+
+> ngexpress@1.0.0 start /home/ubuntu/Desktop/ngexpress
+> nodemon ./bin/www.js
+
+[nodemon] 1.17.5
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node ./bin/www.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./bin/www.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node ./bin/www.js`
+^C
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   app.js
+	modified:   package-lock.json
+	modified:   package.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	api/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git add .
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ sut status
+No command 'sut' found, did you mean:
+ Command 'srt' from package 'python-pysrt' (universe)
+ Command 'sat' from package 'sat-xmpp-core' (universe)
+ Command 'sum' from package 'coreutils' (main)
+ Command 'slt' from package 'slt' (universe)
+ Command 'cut' from package 'coreutils' (main)
+ Command 'sup' from package 'sup' (universe)
+ Command 'sur' from package 'subtle' (universe)
+ Command 'su' from package 'login' (main)
+sut: command not found
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   api/movies/movie.model.js
+	new file:   api/movies/movies.router.js
+	modified:   app.js
+	modified:   package-lock.json
+	modified:   package.json
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git commit -am "mongodb integrated"[master 82867f9] mongodb integrated
+ Committer: Ubuntu <ubuntu@ip-172-31-23-149.ec2.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 195 insertions(+), 2 deletions(-)
+ create mode 100644 api/movies/movie.model.js
+ create mode 100644 api/movies/movies.router.js
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin2 master
+Counting objects: 9, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 3.27 KiB | 0 bytes/s, done.
+Total 9 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To git@github.com:Maruthachala-Easwaran/2-express-first.git
+   15f8f11..82867f9  master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin3 master
+Counting objects: 9, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 3.27 KiB | 0 bytes/s, done.
+Total 9 (delta 3), reused 0 (delta 0)
+To git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/express-app.git
+   15f8f11..82867f9  master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ npm i -S body-parser
+npm WARN ngexpress@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ body-parser@1.18.3
+added 6 packages from 6 contributors, updated 2 packages, moved 3 packages and audited 1943 packages in 5.315s
+found 0 vulnerabilities
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin3 master
+Everything up-to-date
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   package-lock.json
+	modified:   package.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git add .
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git commit -am "body-parser added as a dependency"
+[master ce4d5c4] body-parser added as a dependency
+ Committer: Ubuntu <ubuntu@ip-172-31-23-149.ec2.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 94 insertions(+), 32 deletions(-)
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ git push origin3 master
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.33 KiB | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+To git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/express-app.git
+   82867f9..ce4d5c4  master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngexpress$ 
