@@ -1,5 +1,5 @@
 const express = require('express');
-const MovieModel = require('./movie.model');
+const MovieController = require('./movies.controller');
 const bodyParser = require('body-parser');
 
 const router = express.Router();
@@ -7,20 +7,10 @@ const router = express.Router();
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: false}));
 
-router.get('/movies', async (req,res)=> {
+router.get('/movies', MovieController.getAllMovies);
 
-    const movies = await MovieModel.find({}).exec();
-    res.json(movies);
-});
+router.post('/movies', MovieController.postMovie);
 
-router.post('/movies', async(req,res) => {
-
-   // console.log();
-   const movie = req.body;
-   const movieToBeCreated = MovieModel(movie);
-   const createdMovie = await movieToBeCreated.save();
-   res.json(createdMovie);
-
-});
+router.get('/movie/:movieId', MovieController.getMovieById);
 
 module.exports = router;
